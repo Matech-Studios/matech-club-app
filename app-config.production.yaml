@@ -1,4 +1,5 @@
 app:
+  title: Matech Club App
   # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   baseUrl: http://localhost:7007
 
@@ -38,3 +39,22 @@ catalog:
   # See https://backstage.io/docs/features/software-catalog/software-catalog-overview#adding-components-to-the-catalog for more details
   # on how to get entities into the catalog.
   locations: []
+
+
+auth:
+  # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}       
+    # google:
+    #   development:
+    #     clientId: ${GOOGLE_CLIENT_ID}
+    #     clientSecret: ${GOOGLE_CLIENT_SECRET}
+
+integrations:
+  github:
+    - host: github.com
+      token: ${GITHUB_TOKEN}
